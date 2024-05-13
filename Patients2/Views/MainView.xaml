@@ -1,0 +1,32 @@
+﻿<Window x:Class="Patients2.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Patients2.Views"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="Пациенты" Height="768" Width="1024">
+    <Grid Background="#FFEAEAEA">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#FFE2E2E2">
+            <StackPanel Orientation="Vertical">
+                <Button x:Name="patientsButton"
+                    Content="Пациенты"
+                    Style="{StaticResource TransparentButtonStyle}" Click="patientsButton_Click"/>
+                <Button x:Name="basicInputButton"
+                    Content="Базовые данные"
+                    Style="{StaticResource TransparentButtonStyle}" Click="basicInputButton_Click"/>
+                <Button x:Name="basicInputCalcButton"
+                    Content="Базовые данные 2"
+                    Style="{StaticResource TransparentButtonStyle}" Click="basicInputCalcButton_Click"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Background="#FFEAEAEA">
+            <DataGrid x:Name="tableDataGrid" AutoGenerateColumns="False" ColumnWidth="*"/>
+        </Grid>
+    </Grid>
+</Window>
